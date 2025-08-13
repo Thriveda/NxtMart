@@ -45,15 +45,15 @@ function Cart() {
     }
   return (
     isMobile ?  
-    <div className='flex flex-col py-3'>
+    <div className='flex flex-col py-3 h-screen'>
         <h1 className='text-2xl self-center'>Checkout</h1>
-        <p className='self-end my-1 mx-4'>items({})</p>
-        <div className='flex flex-col justify-between items-center h-[736px]'>
-          <ul className='flex flex-col justify-start mt-6'>
+        <p className='self-end my-1 mx-4'>items({cartQuantity===0 ? 0 : cartQuantity})</p>
+        {cartQuantity !== 0 ? <div className='flex flex-col justify-between items-center'>
+          <ul className='flex flex-col justify-start mt-6 w-screen pb-4'>
           {cartProducts.map((item)=>{
           return(
             <li className='flex flex-row justify-between items-center mb-2'>
-              <div className='flex flex-row justify-start items-center'>
+              <div className='flex flex-row justify-between items-center'>
                 <img src={item.image} className='h-[64px] w-[84px] m-4' alt={item.name} />
                 <div className='flex flex-col ml-1'>
                   <p className="font-medium line-clamp-1">{item.name}</p>
@@ -70,20 +70,26 @@ function Cart() {
           )
         })}   
           </ul>     
-          <div className='flex flex-row justify-center items-center'>
+          <div className='flex flex-row justify-center items-center' style={{"margin-bottom":"30%"}}>
             <p>Total ({cartProducts.length} items) : ₹ {totalAmount}</p>
             <button className='bg-[#088C03] ml-3 px-2 py-1.5 rounded-md text-[white]' onClick={checkoutBut}>Checkout</button>
           </div>
-       </div>
-       <div className='mt-5'>
+       </div> :
+      <div className='flex flex-col justify-center items-center min-h-[65vh]'>
+        <img src="https://res.cloudinary.com/dpqs7ibuh/image/upload/v1754391602/Logo_qzeygb.png" alt="logo" className='size-12'/>
+        <p className=''>Cart is empty</p>
+      </div> }
+       <div className='fixed bottom-0 w-screen bg-[#FFFFFF] mt-3'>
        <HeaderMV />
        </div>
     </div> :
-     <div>
+     <div className='h-screen'>
+      <div>
       <Header/>
-      {cartProducts.length!==0?<div className=''>
+      </div>
+      {cartProducts.length!==0?<div className = "pb-3">
         <h1 className='font-bold text-2xl mt-10 ml-34'>Items</h1>
-        <ul className='flex flex-col justify-start mx-34 mt-6 </ul> border-3 border-[#D8D8D8] rounded-lg'>
+        <ul className='flex flex-col justify-start mx-34 mt-6 border-3 border-[#D8D8D8] rounded-lg mb-5'  style={{"margin-bottom":"15%"}} >
           {cartProducts.map((item)=>{
             return(
               <>
@@ -107,19 +113,19 @@ function Cart() {
               
             )
           })}        
-          <div className='flex flex-row justify-end items-center mx-36 my-6 '>
+          <div className='flex flex-row justify-end items-center mx-36 my-6'>
             <p>Total ({cartProducts.length} items) : ₹ {totalAmount}</p>
             <button className='bg-[#088C03] ml-3 px-2 py-1.5 rounded-md text-[white]' onClick={checkoutBut}>Checkout</button>
           </div>
         </ul>
       </div>:
-      <div className='flex flex-col justify-center items-center h-full'>
+      <div className='flex flex-col justify-center items-center min-h-[60vh]'>
         <img src="https://res.cloudinary.com/dpqs7ibuh/image/upload/v1754391602/Logo_qzeygb.png" alt="logo" className='size-12'/>
         <p className=''>Cart is empty</p>
       </div>}
-      {/* <div className='fixed bottom-0 w-full'>
+      <div className='fixed bottom-0 w-screen z-50'>
         <Footer />
-      </div> */}
+      </div>
     </div> 
   )
 }
