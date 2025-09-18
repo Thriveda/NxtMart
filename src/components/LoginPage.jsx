@@ -62,9 +62,9 @@ const LoginPage = () =>{
     }
 
     return(
-        <div className="bg-[url('https://res.cloudinary.com/dpqs7ibuh/image/upload/v1752660944/Background_2_yg1fxs.png')] md:bg-[url('https://res.cloudinary.com/dpqs7ibuh/image/upload/v1752588817/Background_1_i6fazn.png')] bg-cover h-screen w-screen flex felx-col justify-center items-center">
+        <div className="bg-[url('https://res.cloudinary.com/dpqs7ibuh/image/upload/v1752660944/Background_2_yg1fxs.png')] md:bg-[url('https://res.cloudinary.com/dpqs7ibuh/image/upload/v1758103391/Background_1_xw4rpk.png')] bg-cover h-screen w-screen flex felx-col justify-center items-center">
             <div className="bg-[white] w-80 md:w-120 p-8 rounded-xl flex flex-col justify-center items-center">
-                <img src="https://res.cloudinary.com/dpqs7ibuh/image/upload/v1752589350/Logo_2_peviun.png" className="" alt="NxtMart" />
+                <img src="https://res.cloudinary.com/dpqs7ibuh/image/upload/v1758103176/Logo_2_exiyhq.png" className="" alt="NxtMart" />
                 <form className="flex flex-col p-1" onSubmit={submitLogin}>
                     <label htmlFor="username" className="m-1 text-[gray]">Username</label>
                     <div className="relative">

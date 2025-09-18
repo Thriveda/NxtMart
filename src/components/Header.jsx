@@ -13,7 +13,7 @@ function Header(){
    
     return(
         <div className="flex flex-row justify-between items-start p-1 bg-[#D8D8D833] h-auto z-50 "> 
-            <img src="https://res.cloudinary.com/dpqs7ibuh/image/upload/v1752589350/Logo_2_peviun.png" className="" alt="NxtMart" />
+            <img src="https://res.cloudinary.com/dpqs7ibuh/image/upload/v1758103176/Logo_2_exiyhq.png" className="" alt="NxtMart" />
             <div className="flex flex-row justify p-4">
                 <ul className="flex flex-row">
                     <li className='m-2'><Link to="/home">Home</Link></li>
